@@ -543,7 +543,7 @@ await check('exposes knowledge bases in the @ menu with a hidden path ref', asyn
   const serialized = knowledgeSource.codec.serialize(picked.insert.ref)
   assert.ok(serialized.includes('知识库：测试知识库'), 'serialized name missing')
   assert.ok(serialized.includes('根目录：/tmp/vault'), 'serialized path missing')
-  assert.ok(serialized.includes('URL：wiki://kb/kb_new'), 'serialized URL missing')
+  assert.ok(!serialized.includes('wiki://') && !serialized.includes('URL：'), 'serialized reference should not carry a URL')
   assert.equal(knowledgeSource.codec.clipboardText(picked.insert.ref), '测试知识库')
 })
 

@@ -4718,8 +4718,7 @@ window.__ModuleLoader__.load({
               serialize(ref) {
                 const kb = decodeKbRef(ref)
                 if (kb === null) return ''
-                const url = kb.url !== '' ? kb.url : `wiki://kb/${encodeURIComponent(kb.id)}`
-                return `知识库：${kb.name}\n根目录：${kb.path}\nURL：${url}`
+                return `知识库：${kb.name}\n根目录：${kb.path}`
               },
             },
         }

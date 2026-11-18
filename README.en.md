@@ -112,7 +112,7 @@ Execution depends on the knowledge base’s rules, Agent tools, and host permiss
 
 ### Reference a knowledge base in any conversation
 
-Type `@` and select a knowledge base from the “知识库” group. The reference includes its name, root directory, and internal URL so the Agent can read the sources. **Use the `@` menu for knowledge-base references.** In newer DSH versions, the input’s `+` menu lists slash commands.
+Type `@` and select a knowledge base from the “知识库” group. The reference includes its name and root directory so the Agent can read the sources. **Use the `@` menu for knowledge-base references.** In newer DSH versions, the input’s `+` menu lists slash commands.
 
 ### Reuse prompts and attachments
 
