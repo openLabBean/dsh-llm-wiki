@@ -486,7 +486,7 @@ await check('adds a knowledge base through the modal', async () => {
   const firstCard = findAll(tree, (node) => typeof node.props?.className === 'string' && node.props.className === 'wm-card')[0]
   assert.ok(firstCard, 'knowledge-base card missing')
   assert.ok(!textOf(firstCard).includes('/tmp/vault'), 'knowledge-base path should not be shown on the card')
-  assert.ok(findAll(tree, (node) => node.type === 'button' && /^进入知识库 →$/.test(textOf(node).trim())).length >= 1, 'card enter button missing')
+  assert.ok(findAll(tree, (node) => node.type === 'button' && /^进入 →$/.test(textOf(node).trim())).length >= 1, 'card enter button missing')
   assert.ok(textOf(firstCard).includes('3 页面'), 'card page count should fall back to validation numbers')
   assert.ok(textOf(firstCard).includes('2 标签'), 'card tag count should fall back to validation numbers')
   assert.ok(textOf(tree).includes('WIKI 架构创建提示词'), 'architecture prompt should open right after creating with 通用')
@@ -627,7 +627,7 @@ await check('opens the detail view and draws the graph', async () => {
     stats: { pages: 2, tags: 1, links: 1, isolated: 0 },
   }
   nodePayload = { rel: 'wiki/concepts/semantic.md', title: '语义层', meta: { type: 'concept', domain: 'ONT', status: 'stable' }, markdown: '# 语义层\n\n契约语义是关键。\n\n## 来源\n\n- `raw/articles/AgentMemoryBook.md`（原书译稿）\n- 出处 raw/articles/AgentMemoryBook.md（见上文）\n- `raw/articles/missing.md`（不存在）\n' }
-  findAll(tree, (node) => node.type === 'button' && /^进入知识库/.test(textOf(node).trim()))[0].props.onClick()
+  findAll(tree, (node) => node.type === 'button' && /^进入/.test(textOf(node).trim()))[0].props.onClick()
   await flush()
   tree = render()
   const graphElement = findAll(tree, (node) => typeof node.type === 'function' && node.props.graph !== undefined)[0]
@@ -877,7 +877,7 @@ await check('returns to the last visited page after remounting the plugin', asyn
   tree = render()
   await flush()
   tree = render()
-  const enter = findAll(tree, (node) => node.type === 'button' && /^进入知识库/.test(textOf(node).trim()))[0]
+  const enter = findAll(tree, (node) => node.type === 'button' && /^进入/.test(textOf(node).trim()))[0]
   assert.ok(enter, 'enter button missing')
   enter.props.onClick()
   await flush()

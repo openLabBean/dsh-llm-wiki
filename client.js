@@ -83,6 +83,7 @@ window.__ModuleLoader__.load({
       tags: '标签',
       enter: '进入',
       enterKb: '进入知识库',
+      enterShort: '进入',
       edit: '编辑',
       remove: '删除',
       mcp: 'MCP',
@@ -367,6 +368,7 @@ window.__ModuleLoader__.load({
       tags: 'tags',
       enter: 'Open',
       enterKb: 'Open knowledge base',
+      enterShort: 'Open',
       edit: 'Edit',
       remove: 'Delete',
       mcp: 'MCP',
@@ -3257,8 +3259,8 @@ window.__ModuleLoader__.load({
                         { className: 'wm-cardActions' },
                         h(
                           'button',
-                          { type: 'button', className: 'wm-btn wm-btnPrimary wm-cardEnter', onClick: () => openKb(kb) },
-                          `${t('enterKb')} →`,
+                          { type: 'button', className: 'wm-btn wm-btnPrimary wm-cardEnter', onClick: () => openKb(kb), title: t('enterKb'), 'aria-label': t('enterKb') },
+                          `${t('enterShort')} →`,
                         ),
                         h(
                           'button',
@@ -4218,9 +4220,9 @@ window.__ModuleLoader__.load({
 .wm-cardStat{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
 .wm-cardStat .wm-lineIcon{opacity:.72;flex:none}
 .wm-cardStatsDot{color:var(--dsw-alias-label-tertiary,#c0c6d0)}
-.wm-cardActions{display:flex;align-items:center;flex-wrap:wrap;gap:6px;padding-top:12px;border-top:1px solid var(--dsw-alias-border-l2,rgba(15,23,42,.08))}
-.wm-btn.wm-cardEnter{flex:1 1 140px;height:34px;min-width:0;justify-content:center;border-radius:8px;font-size:11.5px;font-weight:600;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 2px 6px rgba(68,125,252,.25)}
-.wm-btn.wm-cardSecondary{flex:none;height:34px;padding:0 7px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-size:11.5px}
+.wm-cardActions{display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding-top:12px;border-top:1px solid var(--dsw-alias-border-l2,rgba(15,23,42,.08))}
+.wm-btn.wm-cardEnter{flex:1 1 auto;height:34px;min-width:0;justify-content:center;border-radius:8px;font-size:11.5px;font-weight:600;padding:0 6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;box-shadow:0 2px 6px rgba(68,125,252,.25)}
+.wm-btn.wm-cardSecondary{flex:none;height:34px;padding:0 6px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;gap:4px;font-size:11.5px}
 .wm-btn.wm-cardIconBtn{width:34px;height:34px;padding:0;border-radius:9px;display:inline-flex;align-items:center;justify-content:center}
 .wm-btn.wm-cardIconBtn:hover{border-color:var(--dsw-alias-border-l3,rgba(15,23,42,.2))}
 .wm-btnDanger.wm-cardIconBtn{color:var(--dsw-alias-state-error-primary,#e5484d)}
