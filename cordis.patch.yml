@@ -1,0 +1,27 @@
+# WIKI Manager bundle patch (now also hosts the embedded prompt studio).
+#
+# One Host row:
+#   - WIKI manager: knowledge-base registry, graph data, page content, AI retrieval.
+#   - Prompt studio: registers the agent-facing `prompt-optimizer` skill and
+#     serves `POST /prompt-studio/api/generate` for the built-in prompt workbench.
+# The client half (both panels) is declared by `dsh.client` in package.json.
+
+- insert:
+    - id: wiki-manager
+      name: '@local/dsh-llm-wiki'
+      config:
+        # Registry of managed knowledge bases. Defaults to $DSH_HOME/wiki-manager/knowledge-bases.json.
+        # dataFile: /Users/you/.dsh/wiki-manager/knowledge-bases.json
+        # Optional model route for the AI retrieval; defaults to the profile's agent default model.
+        # provider: deepseek-account
+        # model: deepseek-flash
+        maxContextPages: 6
+        maxAnswerTokens: 900
+        # WIKI AI 页内对话默认驱动真实 Agent 会话（SSE 流式返回思考/工具步骤/回答），
+        # 设为 false 则回退到本地检索管线。
+        # agentRuntime: true
+        # Embedded prompt studio (formerly the standalone @local/dsh-prompt-studio package).
+        promptStudio:
+          # 改成你自己的知识库目录（示例：/Users/you/Documents/knowledge-base）
+          knowledgeBase: /Users/you/Documents/knowledge-base
+          language: zh-CN

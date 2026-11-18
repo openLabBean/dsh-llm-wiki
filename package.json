@@ -1,0 +1,51 @@
+{
+  "name": "@local/dsh-llm-wiki",
+  "version": "1.1.0",
+  "private": true,
+  "description": "WIKI 管理：侧边栏面板登记本地知识库（名称/用途/路径），进入后看知识库关系图谱、点击节点读页面、右侧 AI 检索总结（原生 Agent 会话）；列表右上角「提示词仓库」按钮把提示词与附件打包收藏、反复复用。",
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json",
+    "./prompt-studio/host.js": "./prompt-studio/host.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "locale/*.json",
+    "prompt-studio/**/*"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openLabBean/dsh-llm-wiki.git"
+  },
+  "homepage": "https://github.com/openLabBean/dsh-llm-wiki#readme",
+  "bugs": {
+    "url": "https://github.com/openLabBean/dsh-llm-wiki/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "wiki",
+    "knowledge-base",
+    "graph",
+    "plugin"
+  ]
+}
